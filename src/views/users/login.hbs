@@ -1,0 +1,25 @@
+<img src="/img/fondo.jpg" alt="fondo" class="img-backgroud">
+<div class="container-login animated flipInY">
+    <div class="login">
+        <div class="logo">
+            <a href="/"><img src="/img/logo2.png" alt="logo"></a>
+        </div>
+        <form action="/users/login" method="POST">
+            <div class="titulo">
+                <h4>Ingrese con su cuenta</h4>
+            </div>
+            <div class="group-input">
+                <i class="fas fa-user"></i> <input type="email" name="email" placeholder="Correo" autocomplete="off" autofocus required>
+            </div>
+            <div class="group-input">
+                <i class="fas fa-lock"></i> <input type="password" name="password" placeholder="Contraseña" autocomplete="off" required>
+            </div>
+            <div class="group-input">
+                <button type="submit" class="btn-rad btn-red btn-block">Iniciar Sesión</button>
+            </div>
+        </form>
+        <div class="forgetPass">
+            <a href="/users/forgot">Olvidé mi contraseña</a>
+        </div>
+    </div>
+</div>

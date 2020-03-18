@@ -1,0 +1,16 @@
+<div class="msg-confirmation">
+    <div class="msg-container animated zoomIn">
+        <form action="{{redirect}}" method="POST">
+            <h3 class="card card-title text-center">Mensaje de confirmación</h3>
+            <div class="msg-body">Ingrese el código proporcionado por el encuestador para visualizar la encuesta</div>
+            <div class="group-input">
+                <input type="hidden" name="codeSecurity" value="{{securityCode}}">
+                <input type="text" name="codeSecuritySurvey" autofocus required>
+            </div>
+            <div class="msg-actions btn-right">
+                <a href="/surveys/all" class="btn-rad btn-red m-0 mini">Cancelar</a>
+                <button class="btn-rad btn-green m-0 mini" type="submit">Aceptar</button>
+            </div>
+        </form>
+    </div>
+</div>

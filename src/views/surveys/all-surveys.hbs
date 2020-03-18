@@ -1,0 +1,68 @@
+{{>header}}
+<div class="m-40">
+    <div class="surveyBody">
+        <h2 class="card card-title text-center">Mis encuestas</h2>
+    </div>
+    <div class="container all-surveys">
+        <a href="/surveys/create" class="btn-rad btn-green">Crear encuesta</a>
+        <table class="table-blue">
+            <tr>
+                <th width="58%">Encuesta</th>
+                <th width="8%">Estado</th>
+                <th width="9%">Realizadas</th>
+                <th width="25%">Acciones</th>
+            </tr>
+            {{#each surveydata}}
+            <tr>
+                <td>{{title}}</td>
+                <td>{{state}}</td>
+                <td class="text-center">{{answerCount}}</td>
+                <td>
+                    <div class="actions">
+                        {{#ifCond state "!==" 'Publicada'}}
+                        <a href="/surveys/edit/{{_id}}" onmouseover="showMsg(this.children)"
+                            onmouseout="hiddenMsg(this.children)">
+                            <i class="fas fa-edit btn-icon btn-green"></i>
+                            <label class="msgInfo" hidden>Editar encuesta</label>
+                        </a>
+                        <a href="/surveys/managequestions/{{_id}}" onmouseover="showMsg(this.children)"
+                            onmouseout="hiddenMsg(this.children)">
+                            <i class="fas fa-tasks btn-icon btn-green"></i>
+                            <label class="msgInfo" hidden>Gestionar preguntas</label>
+                        </a>
+                        {{/ifCond}}
+                        <a href="/surveys/{{_id}}" onmouseover="showMsg(this.children)"
+                            onmouseout="hiddenMsg(this.children)">
+                            <i class="fas fa-eye btn-icon btn-yellow"></i>
+                            <label class="msgInfo" hidden>Ver encuesta</label>
+                        </a>
+                        <a href="/surveys/confirm-delete/{{_id}}" onmouseover="showMsg(this.children)"
+                            onmouseout="hiddenMsg(this.children)">
+                            <i class="fas fa-trash-alt btn-icon btn-red"></i>
+                            <label class="msgInfo" hidden>Eliminar encuesta</label>
+                        </a>
+                        {{#ifCond state "!==" 'Publicada'}}
+                        <a href="/surveys/confirm-publicate-survey/{{_id}}" onmouseover="showMsg(this.children)"
+                            onmouseout="hiddenMsg(this.children)">
+                            <i class="fas fa-share-square btn-icon btn-blue"></i>
+                            <label class="msgInfo" hidden>Publicar encuesta</label>
+                        </a>
+                        {{else}}
+                        <a href="/surveys/see-link/{{_id}}" onmouseover="showMsg(this.children)"
+                            onmouseout="hiddenMsg(this.children)">
+                            <i class="fas fa-link btn-icon btn-blue"></i>
+                            <label class="msgInfo" hidden>Ver enlace</label>
+                        </a>
+                        {{/ifCond}}
+                        <a href="/surveys/export/{{id}}" onmouseover="showMsg(this.children)" onmouseout="hiddenMsg(this.children)">
+                            <i class="fas fa-file-excel btn-icon btn-blue"></i>
+                            <label class="msgInfo" hidden>Exportar respuestas a Excel</label>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+            {{/each}}
+        </table>
+    </div>
+</div>
+{{>confirmation}}

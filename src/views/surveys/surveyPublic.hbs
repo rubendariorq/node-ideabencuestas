@@ -1,0 +1,20 @@
+{{>header}}
+{{#ifCond state "==" 'Publicada'}}
+    {{#if done}}
+        <div class="m-40">
+            <div class="surveyBody">
+                <div class="preview">
+                    <h2 class="card card-title text-center">
+                        Encuesta
+                    </h2>
+                    <form action="/surveys/register-answers/{{idSurvey}}" method="POST">
+                        {{>survey-container}}
+                        <button type="submit" class="btn-rad btn-green btn-block">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {{else}}
+        {{>codeSecure}}
+    {{/if}}
+{{/ifCond}}

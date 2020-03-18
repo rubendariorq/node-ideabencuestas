@@ -1,0 +1,45 @@
+<div class="container-survey">
+    <div class="surveyBody">
+        <div class="container survey-content">
+            <h2 id="survey-title" class="card card-title text-center">{{title}}</h2>
+            <p id="survey-introduction">{{introduction}}</p>
+            <label id="survey-estimated">Tiempo estimado: {{timeEstimated}} minutos</label>
+            {{#if response}}
+            <div class="card">
+                {{#each response}}
+                {{#ifCond questiontype "==" 'smur'}}
+                <div class="check">
+                    <p><b>{{order}}.&nbsp</b>{{question}}<span>*</span></p>
+                    {{#each options}}
+                    <input type="radio" name="{{orderQuestion}}" value="{{opc}}" required>
+                    <label>{{opc}}</label><br>
+                    {{/each}}
+                    {{#if isOther}}
+                    <input type="radio" name="{{order}}" value="Otro" required>
+                    <label for="">Otro</label><br>
+                    {{/if}}
+                </div>
+                {{else}}
+                <div class="group-input">
+                    <p><b>{{order}}.&nbsp</b>{{question}}<span>*</span></p>
+                    {{#ifCond questiontype "==" 'openShort'}}
+                    <input type="text" name="{{order}}" required>
+                    {{else}}
+                        {{#ifCond questiontype "==" 'openLong'}}
+                        <textarea name="{{order}}" required></textarea>
+                        {{else}}
+                            {{#ifCond questiontype "==" 'direction'}}
+                            <input id="direction" type="text" name="{{order}}" required>
+                            <p>Haga click sobre el mapa para obtener la dirección</p>
+                            <div id="map_canvas" class="gmap"></div>
+                            {{/ifCond}}
+                        {{/ifCond}}
+                    {{/ifCond}}
+                </div>
+                {{/ifCond}}
+                {{/each}}
+            </div>
+            {{/if}}
+        </div>
+    </div>
+</div>

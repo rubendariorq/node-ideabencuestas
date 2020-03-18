@@ -1,0 +1,56 @@
+{{#if success_msg}}
+<div id="msg" class="msg msg-done animated fadeInLeft">
+    <div class="msg-logo">
+        <i class="fas fa-check"></i>
+    </div>
+    <div class="msg-description">
+        <h4>Hecho</h4>
+        <p>{{success_msg}}</p>
+    </div>
+    <div id="close" class="msg-action">
+        <i class="fas fa-times"></i>
+    </div>
+</div>
+{{/if}}
+{{#if error_msg}}
+<div id="msg" class="msg msg-error animated fadeInLeft">
+    <div class="msg-logo">
+        <i class="fas fa-times"></i>
+    </div>
+    <div class="msg-description">
+        <h4>Error</h4>
+        <p>{{error_msg}}</p>
+    </div>
+    <div id="close" class="msg-action">
+        <i class="fas fa-times"></i>
+    </div>
+</div>
+{{/if}}
+{{#each errorr}}
+<div id="msg" class="msg msg-error animated fadeInLeft">
+    <div class="msg-logo">
+        <i class="fas fa-times"></i>
+    </div>
+    <div class="msg-description">
+        <h4>Error</h4>
+        <p>{{msg}}</p>
+    </div>
+    <div id="close" class="msg-action">
+        <i class="fas fa-times"></i>
+    </div>
+</div>
+{{/each}}
+{{#if error}}
+<div id="msg" class="msg msg-error animated fadeInLeft">
+    <div class="msg-logo">
+        <i class="fas fa-times"></i>
+    </div>
+    <div class="msg-description">
+        <h4>Error</h4>
+        <p>{{error}}</p>
+    </div>
+    <div id="close" class="msg-action">
+        <i class="fas fa-times"></i>
+    </div>
+</div>
+{{/if}}

@@ -1,0 +1,24 @@
+<div class="questions">
+    <h3 class="card card-title">Preguntas creadas</h3>
+    <table class="table-blue">
+        <tr>
+            <th width="5%">No</th>
+            <th width="85%">Pregunta</th>
+            <th width="10%">Acciones</th>
+        </tr>
+        {{#each response}}
+        <tr>
+            <td>{{order}}</td>
+            <td>{{question}}</td>
+            <td>
+                <div class="actions">
+                    <a href="/surveys/question-confirm-delete/{{idSurvey}}/{{_id}}" onmouseover="showMsg(this.children)"
+                        onmouseout="hiddenMsg(this.children)">
+                        <i class="fas fa-trash-alt btn-icon btn-red"></i>
+                        <label class="msgInfo" hidden>Eliminar pregunta</label>
+                </div>
+            </td>
+        </tr>
+        {{/each}}
+    </table>
+</div>

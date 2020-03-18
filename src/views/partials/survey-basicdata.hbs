@@ -1,0 +1,26 @@
+<div class="group-input">
+    <label>Titulo de la encuesta <span>*</span></label>
+    <input id="title" type="text" name="title" autofocus autocomplete="off" value="{{title}}" required>
+</div>
+<div class="group-input">
+    <label>Introducción <span>*</span></label>
+    <textarea id="introduction" name="introduction" required>{{introduction}}</textarea>
+</div>
+<div class="group-input">
+    <label>Tiempo estimado (en minutos) <span>*</span></label>
+    <input id="estimated" type="number" name="timeEstimated" value="{{timeEstimated}}" autocomplete="off" required>
+</div>
+<div class="group-input">
+    <label>Código seguridad</label>
+    <input type="text" name="securityCode" value="{{securityCode}}"  autocomplete="off">
+</div>
+<div class="div-join">
+    <div class="group-input">
+        <label>Fecha de inicio <span>*</span></label>
+        <input type="date" name="initDate" value="{{initDate}}" required>
+    </div>
+    <div class="group-input">
+        <label>Fecha de fin <span>*</span></label>
+        <input type="date" name="endDate" value="{{endDate}}" required>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+{{>header}}
+<div class="m-40">
+    <div class="surveyBody">
+        <div class="container">
+            <h2 class="card card-title text-center">Mis datos</h2>
+            <div class="card">
+                <form action="/users/mydata" method="POST">
+                    <div class="group-input">
+                        <label>Nombre <span>*</span></label>
+                        <input type="text" name="name" value="{{name}}" autocomplete="off" required>
+                    </div>
+                    <div class="group-input">
+                        <label>Correo <span>*</span></label>
+                        <input type="email" name="email" value="{{email}}" autocomplete="off" required>
+                        <input type="hidden" name="emailVerify" value="{{email}}">
+                    </div>
+                    <div class="group-input">
+                        <label>Contraseña <span>*</span></label>
+                        <input type="password" name="password" value="{{password}}" autocomplete="off" required>
+                    </div>
+                    <div class="group-input">
+                        <label>Contraseña <span>*</span></label>
+                        <input type="password" name="passwordVerify" value="{{password}}" autocomplete="off" required>
+                    </div>
+                    <div class="group-input">
+                        <button type="submit" class="btn btn-rad btn-green m-0 btn-right">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

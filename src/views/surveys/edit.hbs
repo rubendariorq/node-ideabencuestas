@@ -1,0 +1,27 @@
+{{>header}}
+<div class="m-40">
+    <div class="surveyBody">
+        <h2 class="card card-title text-center">Editar encuesta</h2>
+        <div class="div-join">
+            <div class="div-izq">
+                <div class="preview">
+                    <h3 class="card card-title text-center">
+                        Vista anticipada
+                    </h3>
+                    {{>survey-container}}
+                </div>
+            </div>
+            <div class="div-der">
+                <h3 class="card card-title">Datos básicos</h3>
+                <div class="card">
+                    <form action="/surveys/edit/{{_id}}" method="POST">
+                        {{>survey-basicdata}}
+                        <div class="group-input">
+                            <button type="submit" class="btn-rad btn-green btn-right m-0">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

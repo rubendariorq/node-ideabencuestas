@@ -1,0 +1,19 @@
+<header>
+    <div class="container">
+        <div class="logo">
+            <a href="/surveys/all"><img src="/img/logo.png" alt="logo"></a>
+        </div>
+        {{#if user}}
+        <div class="dropdown">
+            <i id="menu" class="fas fa-user-circle"></i>
+            <ul id="items-menu" class="animated flipInX">
+                <li><a href="/users/mydata">Mis datos</a></li>
+                <li><a href="/surveys/all">Mis encuestas</a></li>
+                <li class="separator-bottom"></li>
+                <li><a href="/users/logout">Cerrar Sesión</a></li>
+            </ul>
+        </div>
+        {{/if}}
+    </div>
+    <div class="borde"></div>
+</header>

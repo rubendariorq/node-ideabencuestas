@@ -1,0 +1,12 @@
+{{#if msg}}
+<div class="msg-confirmation">
+    <div class="msg-container animated zoomIn">
+        <h3 class="card card-title text-center">Mensaje de confirmación</h3>
+        <div class="msg-body">{{msg}}</div>
+        <div class="msg-actions btn-right">
+            <a href="/surveys/all" class="btn-rad btn-red m-0 mini">Cancelar</a>
+            <a href="{{redirect}}" class="btn-rad btn-green m-0 mini">Aceptar</a>
+        </div>
+    </div>
+</div>
+{{/if}}

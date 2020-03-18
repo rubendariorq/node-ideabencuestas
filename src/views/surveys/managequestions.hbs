@@ -1,0 +1,46 @@
+{{>header}}
+<div class="m-40">
+    <div class="surveyBody">
+        <h2 class="card card-title text-center">Gestionar preguntas</h2>
+        <div class="div-join">
+            <div class="div-izq">
+                <div class="preview">
+                    <h3 class="card card-title text-center">
+                        Vista anticipada
+                    </h3>
+                    {{>survey-container}}
+                </div>
+            </div>
+            <div class="div-der">
+                <h3 class="card card-title">Crear preguntas</h3>
+                <form action="/surveys/add-question/{{idSurvey}}" method="POST">
+                    <div id="questionZone" class="card">
+                        <div class="group-input">
+                            <label>Pregunta No:<span>*</span></label>
+                            <input type="number" name="order" required>
+                        </div>
+                        <div class="group-input">
+                            <label>Texto de la pregunta <span>*</span></label>
+                            <input type="text" name="question" required>
+                        </div>
+                        <div class="group-input">
+                            <label>Tipo de pregunta <span>*</span></label>
+                            <select name="questiontype" required>
+                                <option value="">...</option>
+                                <option value="direction">Dirección</option>
+                                <option value="openShort">Abierta (Respuesta corta)</option>
+                                <option value="openLong">Abierta (Respuesta larga)</option>
+                                <option value="smur">Selección múltiple con única respuesta</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="group-input">
+                        <button type="submit" class="btn-rad btn-blue btn-right"> Agregar
+                            pregunta</button>
+                    </div>
+                </form>
+                {{>questions}}
+            </div>
+        </div>
+    </div>
+</div>
